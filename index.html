@@ -133,15 +133,15 @@ button{font-family:inherit;border:none;cursor:pointer;background:none}
 .photos-main{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
 .photo-card{border-radius:var(--radius);overflow:hidden;cursor:pointer;position:relative;box-shadow:var(--shadow);transition:transform .45s var(--ease),box-shadow .45s}
 .photo-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:var(--shadow-lg)}
-.photo-card img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s}
+.photo-card img{width:100%;height:auto;max-height:450px;object-fit:contain;object-position:center;background:#FFEFF7;transition:transform .5s;border-radius:inherit}
 .photo-card:hover img{transform:scale(1.07)}
-.photo-card:nth-child(1){grid-row:span 2}
-.photo-card:nth-child(1) img{height:100%;min-height:400px}
-.photo-card:nth-child(2) img,.photo-card:nth-child(3) img{height:190px}
+.photo-card:nth-child(1){grid-row:span 1}
+.photo-card:nth-child(1) img{height:auto;max-height:500px}
+.photo-card:nth-child(2) img,.photo-card:nth-child(3) img{height:auto;max-height:350px}
 .photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(236,72,153,.45));opacity:0;transition:opacity .4s;display:flex;align-items:flex-end;padding:20px;border-radius:var(--radius)}
 .photo-card:hover .photo-overlay{opacity:1}
 .photo-overlay span{color:#fff;font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem}
-@media(max-width:640px){.photos-main{grid-template-columns:1fr;}.photo-card:nth-child(1){grid-row:span 1}.photo-card:nth-child(1) img,.photo-card:nth-child(2) img,.photo-card:nth-child(3) img{height:260px}}
+@media(max-width:640px){.photos-main{grid-template-columns:1fr;}.photo-card:nth-child(1){grid-row:span 1}.photo-card:nth-child(1) img,.photo-card:nth-child(2) img,.photo-card:nth-child(3) img{height:auto;max-height:300px}}
 
 /* LIGHTBOX */
 #lbox{position:fixed;inset:0;z-index:9000;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);opacity:0;transition:opacity .35s}
@@ -276,7 +276,7 @@ footer p{font-size:.85rem;color:var(--muted);font-weight:300}
       <span class="grad-text">Isabella,</span>
       <em>Happy Girlfriend's Day ❤️</em>
     </h1>
-    <p class="hero-sub reveal visible">One week ago, the most beautiful thing happened to me. It was you.</p>
+    <p class="hero-sub reveal visible">A few days ago, the most beautiful thing happened to me. It was you.</p>
     <button class="hero-cta" onclick="document.getElementById('welcome').scrollIntoView({behavior:'smooth'})">
       Read Your Letter &rarr;
     </button>
@@ -431,7 +431,7 @@ footer p{font-size:.85rem;color:var(--muted);font-weight:300}
 const CFG = {
 
   letter: {
-    body: "Isabella.\n\nOne week. Seven days. One hundred and sixty-eight hours. And yet, somehow, it already feels like I have known you for a lifetime.\n\nFrom the very first moment I noticed you, something shifted inside of me. Something quiet but certain — the way the world gets very still right before something extraordinary happens. That is what you did. You made the world still.\n\nI built this page with my own hands because a text message felt too small. A phone call felt too ordinary. You are not ordinary, Isabella. You are the kind of person who deserves a love that shows up — not just says things, but does things. So I built this. For you. Just you.\n\nI know it has only been a week. But what a week it has been. Every conversation has felt like a gift I did not expect. Every laugh we shared has played back in my mind like a song I cannot get out of my head. Every time you smiled, I kept it somewhere safe, somewhere I can return to when the day is hard.\n\nThank you, Isabella. For choosing this with me. For being exactly who you are.",
+    body: "Isabella.\n\nThese few days. That is all it has been. And yet, somehow, it already feels like I have known you for a lifetime.\n\nFrom the very first moment I noticed you, something shifted inside of me. Something quiet but certain — the way the world gets very still right before something extraordinary happens. That is what you did. You made the world still.\n\nI built this page with my own hands because a text message felt too small. A phone call felt too ordinary. You are not ordinary, Isabella. You are the kind of person who deserves a love that shows up — not just says things, but does things. So I built this. For you. Just you.\n\nI know it has only been a few days. But what these few days have been. Every conversation has felt like a gift I did not expect. Every laugh we shared has played back in my mind like a song I cannot get out of my head. Every time you smiled, I kept it somewhere safe, somewhere I can return to when the day is hard.\n\nThank you, Isabella. For choosing this with me. For being exactly who you are.",
     signature: "Yours sincerely and completely, with love ❤️"
   },
 
@@ -439,7 +439,7 @@ const CFG = {
     { date: 'Day One', title: 'The Moment I Saw You', desc: 'There was something about you that made everything else in the room disappear. I did not even know your name yet, and already I was intrigued.' },
     { date: 'When We Spoke', title: 'Your Voice Changed Things', desc: 'The first time we actually talked, I realised I wanted to keep talking to you forever. You are effortlessly interesting.' },
     { date: 'The Decision', title: 'I Chose You', desc: 'I remember the moment I decided — this girl is someone I want to know. Someone I want to make happy. Someone worth every effort.' },
-    { date: 'Right Now', title: 'One Week In, Already Certain', desc: 'It has only been a week but I already know — meeting you was not an accident. It was the best thing that has happened to me this year.' }
+    { date: 'Right Now', title: 'A Few Days In, Already Certain', desc: 'It has only been a week but I already know — meeting you was not an accident. It was the best thing that has happened to me this year.' }
   ],
 
   photos: [
@@ -462,7 +462,7 @@ const CFG = {
 
   notes: [
     { label: 'Note 1', msg: 'Isabella — I want you to know that I see you. Not just your face, as beautiful as it is. I see the person behind the smile. And she is extraordinary.' },
-    { label: 'Note 2', msg: 'One week ago I did not know what the rest of this year would feel like. Then you happened, and suddenly everything feels warmer.' },
+    { label: 'Note 2', msg: 'A few days ago I did not know what the rest of this year would feel like. Then you happened, and suddenly everything feels warmer.' },
     { label: 'Note 3', msg: 'You deserve someone who makes you feel chosen every single day. That is exactly what I intend to do.' },
     { label: 'Note 4', msg: 'I wrote this page at night, thinking about you, because I wanted you to feel as special as you actually are. You deserve nothing less.' },
     { label: 'Note 5', msg: 'Isabella, if nobody has told you today — you are breathtaking. Inside and out. And I am grateful every day that you are mine.' },
@@ -489,7 +489,7 @@ const CFG = {
     'I am so glad I found you ❤️',
     'You deserve all of this and more 🌸',
     'Your smile is my favorite thing 😍',
-    'One week and already certain ✨',
+    'A few days and already certain ✨',
     'You make everything feel warmer 💗',
     'This is all for you, Isabella 💌',
     'My heart chose you 💖',
@@ -498,7 +498,7 @@ const CFG = {
   ],
 
   finalLetter: {
-    body: "Isabella.\n\nIf you have made it all the way here, then you have seen what I feel — laid out across every section of this page, written with every ounce of sincerity I have.\n\nI want you to know something important: I did not build this because I had to. I built it because when I think of you, I want to do things that match how you make me feel. Big things. Thoughtful things. Things that say — I notice you, I value you, I am not taking a single moment with you for granted.\n\nOne week is just the beginning, Isabella. And I want the beginning to feel like something you remember forever.\n\nHappy Girlfriend's Day. You are the most beautiful surprise of my life.",
+    body: "Isabella.\n\nIf you have made it all the way here, then you have seen what I feel — laid out across every section of this page, written with every ounce of sincerity I have.\n\nI want you to know something important: I did not build this because I had to. I built it because when I think of you, I want to do things that match how you make me feel. Big things. Thoughtful things. Things that say — I notice you, I value you, I am not taking a single moment with you for granted.\n\nThese few days are just the beginning, Isabella. And I want the beginning to feel like something you remember forever.\n\nHappy Girlfriend's Day. You are the most beautiful surprise of my life.",
     sig: "Yours, with a heart full of love ❤️"
   },
 
